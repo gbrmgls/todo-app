@@ -1,0 +1,392 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ToDo App",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "ToDo"
+    },
+    {
+      "name": "ToDoList"
+    }
+  ],
+  "paths": {
+    "/todo/get": {
+      "get": {
+        "tags": ["ToDo"],
+        "summary": "Get All",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/todo/get/": {
+      "post": {
+        "tags": ["ToDo"],
+        "summary": "Get Filtered",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "filter": {
+                    "or": {
+                      "value": "api"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/todo/create/": {
+      "post": {
+        "tags": ["ToDo"],
+        "summary": "Create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "value": "teste pela api"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "list",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/todo/update/": {
+      "patch": {
+        "tags": ["ToDo"],
+        "summary": "Update",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "value": "tatata"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "94f3da38-96f6-498f-812d-dbe042fa9c59"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/todo/delete/": {
+      "delete": {
+        "tags": ["ToDo"],
+        "summary": "Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "43b21d07-eb37-4835-b2a1-a1ca460e13b2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/todo_list/get": {
+      "get": {
+        "tags": ["ToDoList"],
+        "summary": "Get All",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/todo_list/get/": {
+      "post": {
+        "tags": ["ToDoList"],
+        "summary": "Get Filtered",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "filter": {
+                    "or": {
+                      "done": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/todo_list/create/": {
+      "post": {
+        "tags": ["ToDoList"],
+        "summary": "Create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {}
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/todo_list/update/": {
+      "patch": {
+        "tags": ["ToDoList"],
+        "summary": "Update",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "done": true
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "4fdad1f8-7127-4396-b5dc-c4f2242273b9"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/todo_list/delete/": {
+      "delete": {
+        "tags": ["ToDoList"],
+        "summary": "Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "597fd518-87a5-48e6-8428-799c3746e73b"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/todo_list/add_todos/": {
+      "patch": {
+        "tags": ["ToDoList"],
+        "summary": "Add ToDos",
+        "requestBody": {
+          "content": {}
+        },
+        "parameters": [
+          {
+            "name": "todo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "94f3da38-96f6-498f-812d-dbe042fa9c59"
+          },
+          {
+            "name": "list",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "c33dd93c-5d11-4af7-9c3a-0f4103c9fea4"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/todo_list/remove_todos/": {
+      "patch": {
+        "tags": ["ToDoList"],
+        "summary": "Remove ToDos",
+        "requestBody": {
+          "content": {}
+        },
+        "parameters": [
+          {
+            "name": "todo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "94f3da38-96f6-498f-812d-dbe042fa9c59"
+          },
+          {
+            "name": "list",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "c33dd93c-5d11-4af7-9c3a-0f4103c9fea4"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": ["default"],
+        "summary": "Server Query Test",
+        "parameters": [
+          {
+            "name": "echo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "OK"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    },
+    "/OK": {
+      "get": {
+        "tags": ["default"],
+        "summary": "Server Params Test",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

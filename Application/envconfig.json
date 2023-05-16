@@ -1,0 +1,22 @@
+{
+  "DATABASE": {
+    "DB_TYPE": "POUCHDB",
+    "POUCHDB": {
+      "DB_NAME": "todoapp",
+      "REMOTE": {
+        "HOST": "http://localhost:5984/todoapp",
+        "USERNAME": "admin",
+        "PASSWORD": "admin"
+      }
+    }
+  },
+  "APIS": {
+    "DUMMY_JSON": {
+      "HOST": "https://dummyjson.com"
+    },
+    "RANDOMMER": {
+      "HOST": "https://randommer.io/api",
+      "API_KEY": ""
+    }
+  }
+}

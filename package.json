@@ -1,0 +1,29 @@
+{
+  "name": "todo-app-monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "react-dev": "cd ./Application/Adapters/Primary/GUIs/React/ && npm run dev",
+    "react-build": "cd ./Application/Adapters/Primary/GUIs/React/ && npm run build",
+    "react-start": "cd ./Application/Adapters/Primary/GUIs/React/ && npm run start",
+    "react-install": "npm i && cd ./Application/Adapters/Primary/GUIs/React/ && npm i",
+    "express-dev": "cd ./Application/Adapters/Primary/APIs/Express/ && npm run ",
+    "express-build": "cd ./Application/Adapters/Primary/APIs/Express/ && npm run build",
+    "express-start": "cd ./Application/Adapters/Primary/APIs/Express/ && npm run start",
+    "express-install": "npm i && cd ./Application/Adapters/Primary/APIs/Express/ && npm i"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/pouchdb": "^6.4.0",
+    "@types/pouchdb-browser": "^6.1.3",
+    "@types/uuid": "^9.0.1",
+    "events": "^3.3.0",
+    "pouchdb": "^8.0.1",
+    "pouchdb-browser": "^8.0.1",
+    "pouchdb-find": "^8.0.1",
+    "uuid": "^9.0.0"
+  }
+}
