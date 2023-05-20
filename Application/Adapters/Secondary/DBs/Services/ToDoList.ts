@@ -1,13 +1,8 @@
 import IDBService from "./IDBService";
 import * as Types from "../../../../Commons/Types";
-import * as State from "../../../../State";
 import DAO from "../DAOs";
 
 class ToDoList implements IDBService {
-  // constructor() {
-  //   DAO.ToDoList.subscribe(() => State.Actions.ToDoList.get());
-  // }
-
   async subscribe(callback: any): Promise<void> {
     DAO.ToDo.subscribe(callback);
   }
