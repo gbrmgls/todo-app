@@ -29,9 +29,9 @@ function App() {
   }, [state]);
 
   return (
-    <div className="flex flex-col justify-center items-center mx-2">
-      <div className="flex flex-col w-[100%] md:w-[45rem]">
-        <div className="flex flex-row w-[100%] justify-between">
+    <div className="mx-2 flex flex-col items-center justify-center">
+      <div className="flex w-[100%] flex-col md:w-[45rem]">
+        <div className="flex w-[100%] flex-row justify-between">
           <button
             className="btn my-5"
             onClick={() => State.Actions.ToDoList.create()}
@@ -43,7 +43,7 @@ function App() {
               <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="stroke-current flex-shrink-0 h-6 w-6"
+                  className="h-6 w-6 flex-shrink-0 stroke-current"
                   fill="none"
                   viewBox="0 0 24 24"
                   onClick={() => State.Actions.UI.closeError()}
@@ -61,24 +61,24 @@ function App() {
           )}
         </div>
 
-        <div className="flex flex-col w-[100%]">
+        <div className="flex w-[100%] flex-col">
           {state.toDoLists.map((list: Types.DTOs.ToDoList) => (
             <div
-              className="flex flex-col w-[100%] mb-9 bg-gray-800 rounded-lg"
+              className="mb-9 flex w-[100%] flex-col rounded-lg bg-gray-800"
               key={list.id}
             >
-              <div className="bg-gray-700 text-xl flex flex-row h-[100%] justify-between items-center rounded-lg">
+              <div className="flex h-[100%] flex-row items-center justify-between rounded-lg bg-gray-700 text-xl">
                 <div className="pl-2 text-white">ToDo List</div>
                 <button
-                  className="btn btn-secondary"
+                  className="btn-secondary btn"
                   onClick={() => State.Actions.ToDoList.delete([list.id || ""])}
                 >
                   delete list
                 </button>
               </div>
-              <div className="flex m-2">
+              <div className="m-2 flex">
                 <button
-                  className="btn btn-primary mr-2"
+                  className="btn-primary btn mr-2"
                   onClick={() => {
                     State.Actions.ToDoList.createToDo(
                       {
@@ -102,7 +102,7 @@ function App() {
                 </button>
                 <input
                   type="text"
-                  className="input input-bordered w-[100%]"
+                  className="input-bordered input w-[100%]"
                   value={
                     newToDos.find(
                       (newToDo: Types.DTOs.ToDo) => newToDo.id == list.id
@@ -125,16 +125,16 @@ function App() {
                   list.toDos?.includes(toDo.id || "")
                 )
                 .map((todo) => (
-                  <div className="flex mb-2 items-center m-2" key={todo.id}>
+                  <div className="m-2 mb-2 flex items-center" key={todo.id}>
                     <button
-                      className="btn btn-secondary mr-2"
+                      className="btn-secondary btn mr-2"
                       onClick={() => State.Actions.ToDo.delete([todo.id || ""])}
                     >
                       delete
                     </button>
                     <input
                       type="checkbox"
-                      className="checkbox checkbox-primary checkbox-lg mr-2"
+                      className="checkbox-primary checkbox checkbox-lg mr-2"
                       checked={todo.done}
                       onChange={(e) => {
                         e.target.checked
@@ -149,7 +149,7 @@ function App() {
                     <input
                       className={`w-[100%] ${
                         todo.done ? "line-through" : ""
-                      } input input-bordered`}
+                      } input-bordered input`}
                       type="text"
                       value={todo.value}
                       onChange={(e) =>
