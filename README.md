@@ -8,7 +8,7 @@ Implements the Hexagonal Architecture and Redux Pattern using pure Typescript.
 
 Persists data to PouchDB, syncs with CouchDB compatible servers.
 
-Consumes external APIs: [DummyJSON](https://dummyjson.com/) and [Bacon Ipsum](https://baconipsum.com/). Add todos `:random` and `:quote` to call each.
+Consumes external APIs: [DummyJSON](https://dummyjson.com/) and [Randommer](https://randommer.io/). Add todos `:random` and `:quote` to call each.
 
 Environment variables are in `Application/envconfig.json`
 
